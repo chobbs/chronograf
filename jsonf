@@ -1,1 +1,469 @@
-{"id":2,"cells":[{"i":"66258e1a-51e5-4b34-a14a-796b3853af21","x":0,"y":0,"w":6,"h":4,"name":"Light Saturation","queries":[{"query":"SELECT \"sat\" FROM \"hue_lights\".\"autogen\".\"lights\" WHERE \"name\" = :lamp:","queryConfig":{"database":"","measurement":"","retentionPolicy":"","fields":[],"tags":{},"groupBy":{"time":"","tags":[]},"areTagsAccepted":false,"rawText":"SELECT \"sat\" FROM \"hue_lights\".\"autogen\".\"lights\" WHERE \"name\" = :lamp:","range":null,"shifts":null},"source":"/chronograf/v1/sources/10000"}],"axes":{"x":{"bounds":["",""],"label":"","prefix":"","suffix":"","base":"10","scale":"linear"},"y":{"bounds":["",""],"label":"0 is the least saturated (white)","prefix":"","suffix":"","base":"10","scale":"linear"},"y2":{"bounds":["",""],"label":"","prefix":"","suffix":"","base":"10","scale":"linear"}},"type":"line","colors":[],"legend":{},"tableOptions":{"timeFormat":"MM/DD/YYYY HH:mm:ss.ss","verticalTimeAxis":true,"sortBy":{"internalName":"time","displayName":"","visible":true},"wrapping":"truncate","fieldNames":[{"internalName":"time","displayName":"","visible":true}],"fixFirstColumn":true},"links":{"self":"/chronograf/v1/dashboards/2/cells/66258e1a-51e5-4b34-a14a-796b3853af21"}},{"i":"319a730b-7dca-43b1-8b23-df711f24c83e","x":6,"y":4,"w":6,"h":4,"name":" Color Temperature ","queries":[{"query":"SELECT \"ct\" FROM \"hue_lights\".\"autogen\".\"lights\" WHERE \"name\" = :lamp:","queryConfig":{"database":"","measurement":"","retentionPolicy":"","fields":[],"tags":{},"groupBy":{"time":"","tags":[]},"areTagsAccepted":false,"rawText":"SELECT \"ct\" FROM \"hue_lights\".\"autogen\".\"lights\" WHERE \"name\" = :lamp:","range":null,"shifts":null},"source":"/chronograf/v1/sources/10000"}],"axes":{"x":{"bounds":["",""],"label":"","prefix":"","suffix":"","base":"10","scale":"linear"},"y":{"bounds":["",""],"label":"mired color temperature value","prefix":"","suffix":"","base":"10","scale":"linear"},"y2":{"bounds":["",""],"label":"","prefix":"","suffix":"","base":"10","scale":"linear"}},"type":"line-plus-single-stat","colors":[{"id":"base","type":"background","hex":"#00C9FF","name":"laser","value":"-1000000000000000000"}],"legend":{},"tableOptions":{"timeFormat":"MM/DD/YYYY HH:mm:ss.ss","verticalTimeAxis":true,"sortBy":{"internalName":"time","displayName":"","visible":true},"wrapping":"truncate","fieldNames":[{"internalName":"time","displayName":"","visible":true}],"fixFirstColumn":true},"links":{"self":"/chronograf/v1/dashboards/2/cells/319a730b-7dca-43b1-8b23-df711f24c83e"}},{"i":"ffbb8e24-7122-42e1-81d9-44c9b2fe11cf","x":6,"y":0,"w":6,"h":4,"name":"Lamp Color (Hue)","queries":[{"query":"SELECT \"hue\" FROM \"hue_lights\".\"autogen\".\"lights\" WHERE \"name\" = :lamp:","queryConfig":{"database":"","measurement":"","retentionPolicy":"","fields":[],"tags":{},"groupBy":{"time":"","tags":[]},"areTagsAccepted":false,"rawText":"SELECT \"hue\" FROM \"hue_lights\".\"autogen\".\"lights\" WHERE \"name\" = :lamp:","range":null,"shifts":null},"source":"/chronograf/v1/sources/10000"}],"axes":{"x":{"bounds":["",""],"label":"","prefix":"","suffix":"","base":"10","scale":"linear"},"y":{"bounds":["",""],"label":"","prefix":"","suffix":"","base":"10","scale":"linear"},"y2":{"bounds":["",""],"label":"","prefix":"","suffix":"","base":"10","scale":"linear"}},"type":"gauge","colors":[{"id":"0","type":"min","hex":"#ffffff","name":"white","value":"0"},{"id":"bf102fe2-07ae-48f2-8d52-b42b9ed40b50","type":"threshold","hex":"#7CE490","name":"honeydew","value":"25500"},{"id":"9b874e7f-d4b8-4631-8bda-de65e1912ef3","type":"threshold","hex":"#4591ED","name":"ocean","value":"32872.23"},{"id":"60b8d98a-c35a-4853-aa30-bce921136e94","type":"threshold","hex":"#BF3D5E","name":"ruby","value":"63000"},{"id":"1","type":"max","hex":"#BF3D5E","name":"ruby","value":"70000"}],"legend":{},"tableOptions":{"timeFormat":"MM/DD/YYYY HH:mm:ss.ss","verticalTimeAxis":true,"sortBy":{"internalName":"time","displayName":"","visible":true},"wrapping":"truncate","fieldNames":[{"internalName":"time","displayName":"","visible":true}],"fixFirstColumn":true},"links":{"self":"/chronograf/v1/dashboards/2/cells/ffbb8e24-7122-42e1-81d9-44c9b2fe11cf"}},{"i":"2dbd16c1-d228-464e-a4d6-7f496318cddc","x":0,"y":4,"w":6,"h":4,"name":"Lamp Brightness","queries":[{"query":"SELECT \"bri\" FROM \"hue_lights\".\"autogen\".\"lights\" WHERE \"name\" = :lamp:","queryConfig":{"database":"","measurement":"","retentionPolicy":"","fields":[],"tags":{},"groupBy":{"time":"","tags":[]},"areTagsAccepted":false,"rawText":"SELECT \"bri\" FROM \"hue_lights\".\"autogen\".\"lights\" WHERE \"name\" = :lamp:","range":null,"shifts":null},"source":"/chronograf/v1/sources/10000"}],"axes":{"x":{"bounds":["",""],"label":"","prefix":"","suffix":"","base":"10","scale":"linear"},"y":{"bounds":["",""],"label":"bri value of the light","prefix":"","suffix":"","base":"10","scale":"linear"},"y2":{"bounds":["",""],"label":"","prefix":"","suffix":"","base":"10","scale":"linear"}},"type":"line","colors":[],"legend":{},"tableOptions":{"timeFormat":"MM/DD/YYYY HH:mm:ss.ss","verticalTimeAxis":true,"sortBy":{"internalName":"time","displayName":"","visible":true},"wrapping":"truncate","fieldNames":[{"internalName":"time","displayName":"","visible":true}],"fixFirstColumn":true},"links":{"self":"/chronograf/v1/dashboards/2/cells/2dbd16c1-d228-464e-a4d6-7f496318cddc"}}],"templates":[{"tempVar":":lamp:","values":[{"value":"Stark color lamp 3","type":"tagValue","selected":true}],"id":"0901c3d4-0421-4282-b1ab-0e671ceed1e4","type":"tagValues","label":"","query":{"influxql":"SHOW TAG VALUES ON :database: FROM :measurement: WITH KEY=:tagKey:","db":"hue_lights","measurement":"lights","tagKey":"name","fieldKey":""},"links":{"self":"/chronograf/v1/dashboards/2/templates/0901c3d4-0421-4282-b1ab-0e671ceed1e4"}}],"name":"Phillips Hue Smart Lights (IoT)","organization":"default","links":{"self":"/chronograf/v1/dashboards/2","cells":"/chronograf/v1/dashboards/2/cells","templates":"/chronograf/v1/dashboards/2/templates"}}
+{
+  "id": 2,
+  "cells": [
+    {
+      "i": "66258e1a-51e5-4b34-a14a-796b3853af21",
+      "x": 0,
+      "y": 0,
+      "w": 6,
+      "h": 4,
+      "name": "Light Saturation",
+      "queries": [
+        {
+          "query": "SELECT \"sat\" FROM \"hue_lights\".\"autogen\".\"lights\" WHERE \"name\" = :lamp:",
+          "queryConfig": {
+            "database": "",
+            "measurement": "",
+            "retentionPolicy": "",
+            "fields": [
+              
+            ],
+            "tags": {
+              
+            },
+            "groupBy": {
+              "time": "",
+              "tags": [
+                
+              ]
+            },
+            "areTagsAccepted": false,
+            "rawText": "SELECT \"sat\" FROM \"hue_lights\".\"autogen\".\"lights\" WHERE \"name\" = :lamp:",
+            "range": null,
+            "shifts": null
+          },
+          "source": "\/chronograf\/v1\/sources\/10000"
+        }
+      ],
+      "axes": {
+        "x": {
+          "bounds": [
+            "",
+            ""
+          ],
+          "label": "",
+          "prefix": "",
+          "suffix": "",
+          "base": "10",
+          "scale": "linear"
+        },
+        "y": {
+          "bounds": [
+            "",
+            ""
+          ],
+          "label": "0 is the least saturated (white)",
+          "prefix": "",
+          "suffix": "",
+          "base": "10",
+          "scale": "linear"
+        },
+        "y2": {
+          "bounds": [
+            "",
+            ""
+          ],
+          "label": "",
+          "prefix": "",
+          "suffix": "",
+          "base": "10",
+          "scale": "linear"
+        }
+      },
+      "type": "line",
+      "colors": [
+        
+      ],
+      "legend": {
+        
+      },
+      "tableOptions": {
+        "timeFormat": "MM\/DD\/YYYY HH:mm:ss.ss",
+        "verticalTimeAxis": true,
+        "sortBy": {
+          "internalName": "time",
+          "displayName": "",
+          "visible": true
+        },
+        "wrapping": "truncate",
+        "fieldNames": [
+          {
+            "internalName": "time",
+            "displayName": "",
+            "visible": true
+          }
+        ],
+        "fixFirstColumn": true
+      },
+      "links": {
+        "self": "\/chronograf\/v1\/dashboards\/2\/cells\/66258e1a-51e5-4b34-a14a-796b3853af21"
+      }
+    },
+    {
+      "i": "319a730b-7dca-43b1-8b23-df711f24c83e",
+      "x": 6,
+      "y": 4,
+      "w": 6,
+      "h": 4,
+      "name": " Color Temperature ",
+      "queries": [
+        {
+          "query": "SELECT \"ct\" FROM \"hue_lights\".\"autogen\".\"lights\" WHERE \"name\" = :lamp:",
+          "queryConfig": {
+            "database": "",
+            "measurement": "",
+            "retentionPolicy": "",
+            "fields": [
+              
+            ],
+            "tags": {
+              
+            },
+            "groupBy": {
+              "time": "",
+              "tags": [
+                
+              ]
+            },
+            "areTagsAccepted": false,
+            "rawText": "SELECT \"ct\" FROM \"hue_lights\".\"autogen\".\"lights\" WHERE \"name\" = :lamp:",
+            "range": null,
+            "shifts": null
+          },
+          "source": "\/chronograf\/v1\/sources\/10000"
+        }
+      ],
+      "axes": {
+        "x": {
+          "bounds": [
+            "",
+            ""
+          ],
+          "label": "",
+          "prefix": "",
+          "suffix": "",
+          "base": "10",
+          "scale": "linear"
+        },
+        "y": {
+          "bounds": [
+            "",
+            ""
+          ],
+          "label": "mired color temperature value",
+          "prefix": "",
+          "suffix": "",
+          "base": "10",
+          "scale": "linear"
+        },
+        "y2": {
+          "bounds": [
+            "",
+            ""
+          ],
+          "label": "",
+          "prefix": "",
+          "suffix": "",
+          "base": "10",
+          "scale": "linear"
+        }
+      },
+      "type": "line-plus-single-stat",
+      "colors": [
+        {
+          "id": "base",
+          "type": "background",
+          "hex": "#00C9FF",
+          "name": "laser",
+          "value": "-1000000000000000000"
+        }
+      ],
+      "legend": {
+        
+      },
+      "tableOptions": {
+        "timeFormat": "MM\/DD\/YYYY HH:mm:ss.ss",
+        "verticalTimeAxis": true,
+        "sortBy": {
+          "internalName": "time",
+          "displayName": "",
+          "visible": true
+        },
+        "wrapping": "truncate",
+        "fieldNames": [
+          {
+            "internalName": "time",
+            "displayName": "",
+            "visible": true
+          }
+        ],
+        "fixFirstColumn": true
+      },
+      "links": {
+        "self": "\/chronograf\/v1\/dashboards\/2\/cells\/319a730b-7dca-43b1-8b23-df711f24c83e"
+      }
+    },
+    {
+      "i": "ffbb8e24-7122-42e1-81d9-44c9b2fe11cf",
+      "x": 6,
+      "y": 0,
+      "w": 6,
+      "h": 4,
+      "name": "Lamp Color (Hue)",
+      "queries": [
+        {
+          "query": "SELECT \"hue\" FROM \"hue_lights\".\"autogen\".\"lights\" WHERE \"name\" = :lamp:",
+          "queryConfig": {
+            "database": "",
+            "measurement": "",
+            "retentionPolicy": "",
+            "fields": [
+              
+            ],
+            "tags": {
+              
+            },
+            "groupBy": {
+              "time": "",
+              "tags": [
+                
+              ]
+            },
+            "areTagsAccepted": false,
+            "rawText": "SELECT \"hue\" FROM \"hue_lights\".\"autogen\".\"lights\" WHERE \"name\" = :lamp:",
+            "range": null,
+            "shifts": null
+          },
+          "source": "\/chronograf\/v1\/sources\/10000"
+        }
+      ],
+      "axes": {
+        "x": {
+          "bounds": [
+            "",
+            ""
+          ],
+          "label": "",
+          "prefix": "",
+          "suffix": "",
+          "base": "10",
+          "scale": "linear"
+        },
+        "y": {
+          "bounds": [
+            "",
+            ""
+          ],
+          "label": "",
+          "prefix": "",
+          "suffix": "",
+          "base": "10",
+          "scale": "linear"
+        },
+        "y2": {
+          "bounds": [
+            "",
+            ""
+          ],
+          "label": "",
+          "prefix": "",
+          "suffix": "",
+          "base": "10",
+          "scale": "linear"
+        }
+      },
+      "type": "gauge",
+      "colors": [
+        {
+          "id": "0",
+          "type": "min",
+          "hex": "#ffffff",
+          "name": "white",
+          "value": "0"
+        },
+        {
+          "id": "bf102fe2-07ae-48f2-8d52-b42b9ed40b50",
+          "type": "threshold",
+          "hex": "#7CE490",
+          "name": "honeydew",
+          "value": "25500"
+        },
+        {
+          "id": "9b874e7f-d4b8-4631-8bda-de65e1912ef3",
+          "type": "threshold",
+          "hex": "#4591ED",
+          "name": "ocean",
+          "value": "32872.23"
+        },
+        {
+          "id": "60b8d98a-c35a-4853-aa30-bce921136e94",
+          "type": "threshold",
+          "hex": "#BF3D5E",
+          "name": "ruby",
+          "value": "63000"
+        },
+        {
+          "id": "1",
+          "type": "max",
+          "hex": "#BF3D5E",
+          "name": "ruby",
+          "value": "70000"
+        }
+      ],
+      "legend": {
+        
+      },
+      "tableOptions": {
+        "timeFormat": "MM\/DD\/YYYY HH:mm:ss.ss",
+        "verticalTimeAxis": true,
+        "sortBy": {
+          "internalName": "time",
+          "displayName": "",
+          "visible": true
+        },
+        "wrapping": "truncate",
+        "fieldNames": [
+          {
+            "internalName": "time",
+            "displayName": "",
+            "visible": true
+          }
+        ],
+        "fixFirstColumn": true
+      },
+      "links": {
+        "self": "\/chronograf\/v1\/dashboards\/2\/cells\/ffbb8e24-7122-42e1-81d9-44c9b2fe11cf"
+      }
+    },
+    {
+      "i": "2dbd16c1-d228-464e-a4d6-7f496318cddc",
+      "x": 0,
+      "y": 4,
+      "w": 6,
+      "h": 4,
+      "name": "Lamp Brightness",
+      "queries": [
+        {
+          "query": "SELECT \"bri\" FROM \"hue_lights\".\"autogen\".\"lights\" WHERE \"name\" = :lamp:",
+          "queryConfig": {
+            "database": "",
+            "measurement": "",
+            "retentionPolicy": "",
+            "fields": [
+              
+            ],
+            "tags": {
+              
+            },
+            "groupBy": {
+              "time": "",
+              "tags": [
+                
+              ]
+            },
+            "areTagsAccepted": false,
+            "rawText": "SELECT \"bri\" FROM \"hue_lights\".\"autogen\".\"lights\" WHERE \"name\" = :lamp:",
+            "range": null,
+            "shifts": null
+          },
+          "source": "\/chronograf\/v1\/sources\/10000"
+        }
+      ],
+      "axes": {
+        "x": {
+          "bounds": [
+            "",
+            ""
+          ],
+          "label": "",
+          "prefix": "",
+          "suffix": "",
+          "base": "10",
+          "scale": "linear"
+        },
+        "y": {
+          "bounds": [
+            "",
+            ""
+          ],
+          "label": "bri value of the light",
+          "prefix": "",
+          "suffix": "",
+          "base": "10",
+          "scale": "linear"
+        },
+        "y2": {
+          "bounds": [
+            "",
+            ""
+          ],
+          "label": "",
+          "prefix": "",
+          "suffix": "",
+          "base": "10",
+          "scale": "linear"
+        }
+      },
+      "type": "line",
+      "colors": [
+        
+      ],
+      "legend": {
+        
+      },
+      "tableOptions": {
+        "timeFormat": "MM\/DD\/YYYY HH:mm:ss.ss",
+        "verticalTimeAxis": true,
+        "sortBy": {
+          "internalName": "time",
+          "displayName": "",
+          "visible": true
+        },
+        "wrapping": "truncate",
+        "fieldNames": [
+          {
+            "internalName": "time",
+            "displayName": "",
+            "visible": true
+          }
+        ],
+        "fixFirstColumn": true
+      },
+      "links": {
+        "self": "\/chronograf\/v1\/dashboards\/2\/cells\/2dbd16c1-d228-464e-a4d6-7f496318cddc"
+      }
+    }
+  ],
+  "templates": [
+    {
+      "tempVar": ":lamp:",
+      "values": [
+        {
+          "value": "Stark color lamp 3",
+          "type": "tagValue",
+          "selected": true
+        }
+      ],
+      "id": "0901c3d4-0421-4282-b1ab-0e671ceed1e4",
+      "type": "tagValues",
+      "label": "",
+      "query": {
+        "influxql": "SHOW TAG VALUES ON :database: FROM :measurement: WITH KEY=:tagKey:",
+        "db": "hue_lights",
+        "measurement": "lights",
+        "tagKey": "name",
+        "fieldKey": ""
+      },
+      "links": {
+        "self": "\/chronograf\/v1\/dashboards\/2\/templates\/0901c3d4-0421-4282-b1ab-0e671ceed1e4"
+      }
+    }
+  ],
+  "name": "Phillips Hue Smart Lights (IoT)",
+  "organization": "default",
+  "links": {
+    "self": "\/chronograf\/v1\/dashboards\/2",
+    "cells": "\/chronograf\/v1\/dashboards\/2\/cells",
+    "templates": "\/chronograf\/v1\/dashboards\/2\/templates"
+  }
+}
